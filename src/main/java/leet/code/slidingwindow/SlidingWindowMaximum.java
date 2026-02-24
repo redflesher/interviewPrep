@@ -1,36 +1,26 @@
 // https://leetcode.com/problems/sliding-window-maximum/description/
 package leet.code.slidingwindow;
 
-import java.util.Arrays;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 public class SlidingWindowMaximum {
     public static int[] maxSlidingWindow(int[] nums, int k) {
-        int currentMax = nums[0];
+        Deque<Integer> deque = new ArrayDeque<>();
+        int[] result = new int[nums.length -k+1];
+        int j = 0;
 
-        currentMax = findMax(Arrays.copyOfRange(nums, 0, k));
-
-        int[] result = new int[nums.length - k +1];
-        int i = 0;
-        result[i++] = currentMax;
-
-        for (int start = 0; start + k < nums.length; start++) {
-            if (nums[start + k] > currentMax)
-                currentMax = nums[start + k];
-            else if (nums[start] == currentMax)
-                currentMax = findMax(Arrays.copyOfRange(nums, start + 1, start + 1 + k));
-
-            result[i++] = currentMax;
+        for (int i = 0; i < nums.length; i++) {
+            int currentNumber = nums[i];
+            while (!deque.isEmpty() && nums[deque.peekLast()] < currentNumber)
+                deque.pollLast();
+            deque.addLast(i);
+            while (!deque.isEmpty() && deque.peekFirst() < (i - k + 1))
+                deque.pollFirst();
+            if (i >= k-1)
+                result[j++] = nums[deque.peekFirst()];
         }
-
 
         return result;
-    }
-
-    private static int findMax(int[] nums) {
-        int currentMax = Integer.MIN_VALUE;
-        for (int num : nums) {
-            currentMax = Math.max(num, currentMax);
-        }
-        return currentMax;
     }
 }
