@@ -167,4 +167,4 @@ replay_pid*
 # End of https://www.toptal.com/developers/gitignore/api/intellij,java
 **/.DS_Store
 /src/main/java/leet/code/Main.java
-/src/main/java/org
+/src/main/java/org/*
