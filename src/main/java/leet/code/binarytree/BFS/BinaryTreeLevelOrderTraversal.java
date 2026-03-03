@@ -1,5 +1,7 @@
 // https://leetcode.com/problems/binary-tree-level-order-traversal/description/
-package leet.code.binarytree;
+package leet.code.binarytree.BFS;
+
+import leet.code.binarytree.TreeNode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
