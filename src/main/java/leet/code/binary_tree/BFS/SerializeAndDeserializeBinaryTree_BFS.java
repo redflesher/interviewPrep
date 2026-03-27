@@ -8,7 +8,7 @@ import java.util.*;
 public class SerializeAndDeserializeBinaryTree_BFS {
 
     // Encodes a tree to a single string.
-    public static String serialize(TreeNode root) {
+    public String serialize(TreeNode root) {
         List<String> result = new ArrayList<>();
         if (root == null)
             return "";
@@ -39,7 +39,7 @@ public class SerializeAndDeserializeBinaryTree_BFS {
     }
 
     // Decodes your encoded data to tree.
-    public static TreeNode deserialize(String data) {
+    public TreeNode deserialize(String data) {
         if (data == null || data.isEmpty())
             return null;
         String[] nodes = data.split(";");

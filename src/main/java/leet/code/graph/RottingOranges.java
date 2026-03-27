@@ -5,8 +5,7 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 
 public class RottingOranges {
-
-    public static int orangesRotting(int[][] grid) {
+    public int orangesRotting(int[][] grid) {
         Queue<Integer> queue = new ArrayDeque<>();
         int depth = 0;
         int freshCount = 0;
@@ -47,9 +46,7 @@ public class RottingOranges {
         return freshCount == 0 ? depth : -1;
     }
 
-
-
-    private static boolean helper (int[][] grid, Queue<Integer> queue, int row, int column) {
+    private  boolean helper (int[][] grid, Queue<Integer> queue, int row, int column) {
         if (grid[row][column] == 1) {
             grid[row][column] = 2;
             queue.offer(encode(row, column, grid[0].length));
@@ -58,15 +55,15 @@ public class RottingOranges {
         return false;
     }
 
-    private static int decodeColumn(int currentCoordinates, int cols) {
+    private int decodeColumn(int currentCoordinates, int cols) {
         return currentCoordinates % cols;
     }
 
-    private static int decodeRow(int currentCoordinates, int cols) {
+    private int decodeRow(int currentCoordinates, int cols) {
         return currentCoordinates / cols;
     }
 
-    private static int encode(int row, int column, int cols) {
+    private int encode(int row, int column, int cols) {
         return row * cols + column;
     }
 }

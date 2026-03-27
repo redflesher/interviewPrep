@@ -4,7 +4,7 @@ package leet.code.graph.union_find;
 import java.util.*;
 
 public class AccountMerge {
-    public static List<List<String>> accountsMerge(List<List<String>> accounts) {
+    public List<List<String>> accountsMerge(List<List<String>> accounts) {
         Map<String, Integer> emailWithID = new HashMap<>();
         Map<String, String> emailsWithName = new HashMap<>();
         List<List<String>> result = new ArrayList<>();
@@ -57,14 +57,14 @@ public class AccountMerge {
         return result;
     }
 
-    private static int findRoot(int[] parent, int node) {
+    private int findRoot(int[] parent, int node) {
         if (parent[node] != node) {
             parent[node] = findRoot(parent, parent[node]);
         }
         return parent[node];
     }
 
-    private static void union(int[] parent, int[] rank, int a, int b) {
+    private void union(int[] parent, int[] rank, int a, int b) {
         int rootA = findRoot(parent, a);
         int rootB = findRoot(parent, b);
         if (rank[rootA] > rank[rootB]) {

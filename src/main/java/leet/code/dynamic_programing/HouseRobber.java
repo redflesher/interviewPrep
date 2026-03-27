@@ -2,7 +2,7 @@
 package leet.code.dynamic_programing;
 
 public class HouseRobber {
-    public static int rob(int[] nums) {
+    public int rob(int[] nums) {
         if (nums.length == 1)
             return nums[0];
         if (nums.length == 2)

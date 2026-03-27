@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Set;
 
 public class CourseSchedule {
-    public static boolean canFinish(int numCourses, int[][] prerequisites) {
+    public boolean canFinish(int numCourses, int[][] prerequisites) {
         List<List<Integer>> adjacencyList = new ArrayList<>();
 
         for (int i = 0; i < numCourses; i++)
@@ -28,7 +28,7 @@ public class CourseSchedule {
         return true;
     }
 
-    private static boolean dfs(Set<Integer> visited, Set<Integer> visiting, List<List<Integer>> prerequisites, int node) {
+    private boolean dfs(Set<Integer> visited, Set<Integer> visiting, List<List<Integer>> prerequisites, int node) {
         visiting.add(node);
         for (Integer neighbour: prerequisites.get(node)) {
             if (visiting.contains(neighbour))

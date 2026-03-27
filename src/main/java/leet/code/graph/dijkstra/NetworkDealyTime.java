@@ -4,7 +4,7 @@ package leet.code.graph.dijkstra;
 import java.util.*;
 
 public class NetworkDealyTime {
-    public static int networkDelayTime(int[][] times, int n, int k) {
+    public int networkDelayTime(int[][] times, int n, int k) {
         Queue<int[]> queue = new PriorityQueue<>((a,b) -> a[1] - b[1]);
         List<List<int[]>> adjacencyList = new ArrayList<>();
         int[] distance = new int[n + 1];

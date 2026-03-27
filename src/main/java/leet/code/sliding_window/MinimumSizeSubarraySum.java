@@ -2,7 +2,7 @@
 package leet.code.sliding_window;
 
 public class MinimumSizeSubarraySum {
-    public static int minSubArrayLen(int target, int[] nums) {
+    public int minSubArrayLen(int target, int[] nums) {
         int result = Integer.MAX_VALUE;
         int startIndex = 0;
         int sum = 0;

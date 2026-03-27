@@ -2,7 +2,7 @@
 package leet.code.binary_search;
 
 public class FindMinimumInRotatedSortedArray {
-    public static int findMin(int[] nums) {
+    public int findMin(int[] nums) {
         int low = 0;
         int high = nums.length -1;
 

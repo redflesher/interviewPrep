@@ -4,7 +4,7 @@ package leet.code.graph;
 import java.util.Arrays;
 
 public class NumberOfProvinces {
-    public static int findCircleNum(int[][] isConnected) {
+    public int findCircleNum(int[][] isConnected) {
         boolean[] visited = new boolean[isConnected.length];
         Arrays.fill(visited, false);
         int count = 0;
@@ -18,7 +18,7 @@ public class NumberOfProvinces {
         return count;
     }
 
-    private static void helper(boolean[] visited, int[][] isConnected, int node){
+    private void helper(boolean[] visited, int[][] isConnected, int node){
         visited[node] = true;
         for (int neighbour = 0; neighbour < isConnected[node].length; neighbour++) {
             if (isConnected[node][neighbour] == 1 && !visited[neighbour])

@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ConstructBinaryTreeFromPreorderAndInorderTraversal {
-    public static TreeNode buildTree(int[] preorder, int[] inorder) {
+    public TreeNode buildTree(int[] preorder, int[] inorder) {
         Map<Integer, Integer> inorderMap = new HashMap<>();
         for (int i = 0; i < inorder.length; i++) {
             inorderMap.put(inorder[i], i);
@@ -16,7 +16,8 @@ public class ConstructBinaryTreeFromPreorderAndInorderTraversal {
         return build(preorder, inorder, 0, preorder.length - 1, 0, inorder.length - 1, inorderMap);
 
     }
-    private static TreeNode build(int[] preorder,
+
+    private TreeNode build(int[] preorder,
                            int[] inorder,
                            int preorderStart,
                            int preorderEnd,

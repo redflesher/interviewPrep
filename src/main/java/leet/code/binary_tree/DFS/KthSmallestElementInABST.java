@@ -4,9 +4,10 @@ package leet.code.binary_tree.DFS;
 import leet.code.binary_tree.TreeNode;
 
 public class KthSmallestElementInABST {
-    private static int count;
-    private static int result;
-    public static int kthSmallest(TreeNode root, int k) {
+    private int count;
+    private int result;
+
+    public int kthSmallest(TreeNode root, int k) {
         count = 0;
         result = 0;
         inorderTraversalHelper(root, k);
@@ -14,7 +15,7 @@ public class KthSmallestElementInABST {
 
     }
 
-    private static void inorderTraversalHelper(TreeNode node, int k) {
+    private void inorderTraversalHelper(TreeNode node, int k) {
         if (node == null)
             return;
 

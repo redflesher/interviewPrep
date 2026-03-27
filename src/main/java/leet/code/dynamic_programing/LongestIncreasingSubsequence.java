@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LongestIncreasingSubsequence {
-    public static int lengthOfLIS(int[] nums) {
+    public int lengthOfLIS(int[] nums) {
         List<Integer> tails = new ArrayList<>();
 
         for (int num : nums) {

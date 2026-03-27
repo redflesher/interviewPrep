@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class NumberOfProvinces {
-    public static int findCircleNum(int[][] isConnected) {
+    public int findCircleNum(int[][] isConnected) {
         int n = isConnected.length;
         int[] parent = new int[n];
         int[] rank = new int[n];
@@ -30,14 +30,14 @@ public class NumberOfProvinces {
         return resultSet.size();
     }
 
-    private static int findRoot(int[] parent, int node) {
+    private int findRoot(int[] parent, int node) {
         if (parent[node] != node) {
             parent[node] = findRoot(parent, parent[node]);
         }
         return parent[node];
     }
 
-    private static void union(int[] parent, int[] rank, int a, int b) {
+    private void union(int[] parent, int[] rank, int a, int b) {
         int rootA = findRoot(parent, a);
         int rootB = findRoot(parent, b);
         if (rank[rootA] > rank[rootB]) {

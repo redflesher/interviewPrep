@@ -4,7 +4,7 @@ package leet.code.graph.dijkstra;
 import java.util.*;
 
 public class PathWithMinimumEffort {
-    public static int minimumEffortPath(int[][] heights) {
+    public int minimumEffortPath(int[][] heights) {
         Queue<int[]> queue = new PriorityQueue<>((a,b) -> a[2] - b[2]);
         int[][] directions = new int[][] {{0, -1}, {0, 1}, {-1, 0}, {1, 0}};
         int[][] distance = new int[heights.length][heights[0].length];

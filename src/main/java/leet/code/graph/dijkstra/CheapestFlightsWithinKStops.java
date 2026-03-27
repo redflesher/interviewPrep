@@ -5,7 +5,7 @@ package leet.code.graph.dijkstra;
 import java.util.*;
 
 public class CheapestFlightsWithinKStops {
-    public static int findCheapestPrice(int n, int[][] flights, int src, int dst, int k) {
+    public int findCheapestPrice(int n, int[][] flights, int src, int dst, int k) {
         // Step 1: Build adjacency list
         List<List<int[]>> adjacencyList = new ArrayList<>();
         for (int i = 0; i <= n; i++) {
@@ -52,6 +52,7 @@ public class CheapestFlightsWithinKStops {
 
         return distance[dst] == Integer.MAX_VALUE ? -1 : distance[dst];
     }
+
     /*{
         Queue<int[]> pr = new PriorityQueue<>((a,b) -> a[1] - b[1]);
         List<List<int[]>> adjacencyList = new ArrayList<>();

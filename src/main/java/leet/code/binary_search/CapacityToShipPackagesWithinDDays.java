@@ -2,7 +2,7 @@
 package leet.code.binary_search;
 
 public class CapacityToShipPackagesWithinDDays {
-    public static int shipWithinDays(int[] weights, int days) {
+    public int shipWithinDays(int[] weights, int days) {
         int low = weights[0];
         int high = 0;
         for (int weight : weights) {
@@ -24,7 +24,7 @@ public class CapacityToShipPackagesWithinDDays {
         return low;
     }
 
-    private static boolean canCarryAllAtCapacity(int[] weights, int days, int capacity) {
+    private boolean canCarryAllAtCapacity(int[] weights, int days, int capacity) {
         int totalDays = 0;
         int currentCapacity = 0;
         for (int weight : weights) {

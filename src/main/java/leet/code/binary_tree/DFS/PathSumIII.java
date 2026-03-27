@@ -7,14 +7,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PathSumIII {
-    public static List<List<Integer>> pathSum(TreeNode root, int targetSum) {
+    public List<List<Integer>> pathSum(TreeNode root, int targetSum) {
         List<List<Integer>> result = new ArrayList<>();
         List<Integer> currentPath = new ArrayList<>();
         traversalHelper(root, result, targetSum, currentPath);
         return result;
     }
 
-    private static void traversalHelper(
+    private void traversalHelper(
             TreeNode node,
             List<List<Integer>> result,
             int targetSum,

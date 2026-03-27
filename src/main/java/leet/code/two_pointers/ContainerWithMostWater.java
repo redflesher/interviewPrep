@@ -2,7 +2,7 @@
 package leet.code.two_pointers;
 
 public class ContainerWithMostWater {
-    public static int maxArea(int[] height) {
+    public int maxArea(int[] height) {
         int maxArea = 0;
         int left = 0;
         int right = height.length-1;

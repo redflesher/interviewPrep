@@ -4,14 +4,14 @@ package leet.code.binary_tree.DFS;
 import leet.code.binary_tree.TreeNode;
 
 public class BinaryTreeMaximumPathSum {
-    private static int globalMaximum = Integer.MIN_VALUE;
-    public static int maxPathSum(TreeNode root) {
+    private int globalMaximum = Integer.MIN_VALUE;
+    public int maxPathSum(TreeNode root) {
         globalMaximum = Integer.MIN_VALUE;
         postOrderTraversalHelper(root);
         return globalMaximum;
     }
 
-    private static int postOrderTraversalHelper (TreeNode node) {
+    private int postOrderTraversalHelper (TreeNode node) {
         if (node == null)
             return 0;
 

@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MergeIntervals {
-    public static int[][] merge(int[][] intervals) {
+    public int[][] merge(int[][] intervals) {
         Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
         List<int[]> result = new ArrayList<>();
         int[] currentInterval = intervals[0];

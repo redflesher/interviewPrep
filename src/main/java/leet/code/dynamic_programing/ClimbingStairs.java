@@ -2,7 +2,7 @@
 package leet.code.dynamic_programing;
 
 public class ClimbingStairs {
-    public static int climbStairs(int n) {
+    public int climbStairs(int n) {
         if (n == 1)
             return 1;
         if (n == 2)
@@ -17,7 +17,8 @@ public class ClimbingStairs {
 
         return prev1;
     }
-    /*public static int climbStairs(int n) {
+
+    /*public int climbStairs(int n) {
         int[] dp = new int[n + 1];
         dp[1] = 1;
         dp[2] = 2;
@@ -28,7 +29,8 @@ public class ClimbingStairs {
 
         return dp[n];
     }*/
-    /*public static int climbStairs(int n) {
+
+    /*public int climbStairs(int n) {
         int n1 = 1;
         int n2 = 2;
         if (n == 1)

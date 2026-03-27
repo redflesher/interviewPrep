@@ -5,7 +5,7 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 
 public class SwimInRisingWater {
-    public static int swimInWater(int[][] grid) {
+    public int swimInWater(int[][] grid) {
         int rows = grid.length;
         int columns = grid[0].length;
         Queue<int[]> queue = new PriorityQueue<>((a,b) -> a[2] - b[2]);

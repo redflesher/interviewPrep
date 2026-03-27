@@ -2,7 +2,7 @@
 package leet.code.dynamic_programing;
 
 public class HouseRobberII {
-    public static int rob(int[] nums) {
+    public int rob(int[] nums) {
         if (nums.length == 1)
             return nums[0];
         if (nums.length == 2)
@@ -14,7 +14,7 @@ public class HouseRobberII {
         return Math.max(maxWithoutLast, maxWithoutFirst);
     }
 
-    private static int helper(int first,int last, int[] nums) {
+    private int helper(int first,int last, int[] nums) {
         int prev2 = nums[first];
         int prev1 = Math.max(nums[first], nums[first + 1]);
 
