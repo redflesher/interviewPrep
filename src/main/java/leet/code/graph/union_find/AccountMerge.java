@@ -36,13 +36,7 @@ public class AccountMerge {
         for (Map.Entry<String, Integer> entry : emailWithID.entrySet()) {
             String email = entry.getKey();
             int rootID = findRoot(parent, entry.getValue());
-            if (!resultMap.containsKey(rootID)) {
-                List<String> emails = new ArrayList<>();
-                emails.add(email);
-                resultMap.put(rootID, emails);
-            } else {
-                resultMap.get(rootID).add(email);
-            }
+            resultMap.computeIfAbsent(rootID, emails -> new ArrayList<>()).add(email);
         }
 
         for (List<String> emails : resultMap.values()) {
