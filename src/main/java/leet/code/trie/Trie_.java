@@ -1,21 +1,21 @@
 // https://leetcode.com/problems/implement-trie-prefix-tree/description/
 package leet.code.trie;
 
-public class Trie {
+public class Trie_ {
 
-    private Trie[] children;
+    private Trie_[] children;
     private boolean isEnd;
 
-    public Trie() {
-        this.children = new Trie[26];
+    public Trie_() {
+        this.children = new Trie_[26];
         this.isEnd = false;
     }
 
     public void insert(String word) {
-        Trie current = this;
+        Trie_ current = this;
         for (int i = 0; i < word.length(); i++) {
             if (current.children[word.charAt(i) - 'a'] == null)
-                current.children[word.charAt(i) - 'a'] = new Trie();
+                current.children[word.charAt(i) - 'a'] = new Trie_();
             current = current.children[word.charAt(i) - 'a'];
         }
 
@@ -23,19 +23,19 @@ public class Trie {
     }
 
     public boolean search(String word) {
-        Trie current = traversal(this, word);
+        Trie_ current = traversal(this, word);
         if (current == null)
             return false;
         return current.isEnd;
     }
 
     public boolean startsWith(String prefix) {
-        Trie current = traversal(this, prefix);
+        Trie_ current = traversal(this, prefix);
         return current != null;
     }
 
-    private Trie traversal(Trie trie, String word) {
-        Trie current = trie;
+    private Trie_ traversal(Trie_ trie, String word) {
+        Trie_ current = trie;
         for (int i = 0; i < word.length(); i++) {
             if (current.children[word.charAt(i) - 'a'] == null)
                 return null;
