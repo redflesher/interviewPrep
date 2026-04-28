@@ -47,7 +47,7 @@ public class WordDictionary {
         return currentTrie.isEnd;
     }
 
-    class Trie {
+    private class Trie {
         private Trie[] children;
         private boolean isEnd;
 

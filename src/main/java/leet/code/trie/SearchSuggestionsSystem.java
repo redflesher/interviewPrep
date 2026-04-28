@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class SearchSuggestionsSystem {
-    public List<List<String>> suggestedProducts(String[] products, String searchWord) {
+    /*public List<List<String>> suggestedProducts(String[] products, String searchWord) {
         List<List<String>> result = new ArrayList<>();
         int left = 0;
         int right = products.length - 1;
@@ -31,8 +31,8 @@ public class SearchSuggestionsSystem {
         }
 
         return result;
-    }
-    /*public List<List<String>> suggestedProducts(String[] products, String searchWord) {
+    }*/
+    public List<List<String>> suggestedProducts(String[] products, String searchWord) {
 
         List<List<String>> result = new ArrayList<>();
         Trie trie = new Trie();
@@ -109,6 +109,6 @@ public class SearchSuggestionsSystem {
             }
             return current;
         }
-    }*/
+    }
 
 }
