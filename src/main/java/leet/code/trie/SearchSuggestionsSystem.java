@@ -80,7 +80,7 @@ public class SearchSuggestionsSystem {
 
     }
 
-    static class Trie {
+    private class Trie {
         private final Trie[] children;
         private boolean isEnd;
 
