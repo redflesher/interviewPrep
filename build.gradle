@@ -1,9 +1,22 @@
 plugins {
     id 'java'
+    id 'checkstyle'
 }
 
 'group = org.example'
 'version = 1.0-SNAPSHOT'
+
+checkstyle {
+    toolVersion = '10.12.4'
+    configFile = file("config/checkstyle/checkstyle.xml")
+}
+
+tasks.withType(Checkstyle) {
+    reports {
+        xml.required = false
+        html.required = true
+    }
+}
 
 repositories {
     mavenCentral()
